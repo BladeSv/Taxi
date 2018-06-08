@@ -4,6 +4,24 @@ public class Transport extends TransportPark {
 
 	private int speed;
 	private int fuel;
+	private double rate;
+	private double priceKm;
+	public double getPriceKm() {
+		return priceKm;
+	}
+
+	public void setPriceKm(double priceKm) {
+		this.priceKm = priceKm;
+	}
+
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+
 	private TransportType  transprtType;
 
 	public int getFuel() {

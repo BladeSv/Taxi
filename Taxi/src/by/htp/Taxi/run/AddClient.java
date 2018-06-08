@@ -11,6 +11,7 @@ public class AddClient {
 	
 	
 public static Client addClient() {
+	client =new Client();
 System.out.println("¬ведите ¬аше им€:");
 client.setName(Scan.sc.nextLine());
 System.out.println("¬ведите сколько киломметров до пункта назначени€:");

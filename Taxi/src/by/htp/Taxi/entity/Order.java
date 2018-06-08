@@ -1,28 +1,31 @@
 package by.htp.Taxi.entity;
 
+import by.htp.Taxi.run.ChooseTransport;
+
 public class Order extends BaseOrder{
 
-	private String name;
-	private Transport[] Tpark;
-	private double price;
+
+	private ChooseTransport chooseTransport;
+
 	private Client client;
 	
-	public String getName() {
-		return name;
+	
+	
+	public Client getClient() {
+		return client;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setClient(Client client) {
+		this.client = client;
 	}
-	public Transport[] getTpark() {
-		return Tpark;
+	public ChooseTransport getChooseTransport() {
+		return chooseTransport;
 	}
-	public void setTpark(Transport[] tpark) {
-		Tpark = tpark;
+	public void setChooseTransport(ChooseTransport chooseTransport) {
+		this.chooseTransport = chooseTransport;
 	}
-	public double getPrice() {
-		return price;
+	@Override
+	public String toString() {
+		return "Order [chooseTransport=" + chooseTransport + ", client=" + client + "]";
 	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
+
 }

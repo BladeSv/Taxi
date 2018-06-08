@@ -1,26 +1,27 @@
 package by.htp.Taxi.entity;
 
-public class Cllient {
+public class Client {
 
 	private String name;
-	private int distance;
-	private int money;
+	private double distance;
+	private double money;
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getDistance() {
+	public double getDistance() {
 		return distance;
 	}
-	public void setDistance(int distance) {
+	public void setDistance(double distance) {
 		this.distance = distance;
 	}
-	public int getMoney() {
+	public double getMoney() {
 		return money;
 	}
-	public void setMoney(int money) {
+	public void setMoney(double money) {
 		this.money = money;
 	}
 

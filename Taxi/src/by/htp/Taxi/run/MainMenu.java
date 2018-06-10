@@ -19,7 +19,10 @@ public void mainMenu() {
 	System.out.println("3. Отсортировать траспорт по времены доставки.");
 	System.out.println("4. Отсортировать траспорт по стоимости заказа.");
 	System.out.println("5. Добавить транспорт в автопарк такси.");
-	System.out.println("6. Выход из меню.");
+	System.out.println("6. Добавить рандомный транспорт в автопарк такси.");
+	System.out.println("7. Вывести авто в парке.");
+	System.out.println("8. Выход из меню.");
+	
 	switch(Integer.parseInt(Scan.sc.nextLine())) {
 	case 1:
 		baseOrder.addOrder((creatOrder.creatOrder(transportPark)));
@@ -35,11 +38,20 @@ public void mainMenu() {
 				break;
 	case 5:
 		transportPark.addTranport(creatTransport.creatTranport());
+	
 		break;
-	case 6:
+	case 6: 
+		transportPark.addTranport(creatTransport.creatRandTranport());
+		
+		break;
+	case 7:
+		System.out.println(transportPark);
+		break;
+	case 8:
 		System.out.println("Вы уверены, что хотите выйти из меню? (y)");
-		if( "y".equals(Scan.sc.hasNextLine())) {
+		if( ("y").equals(Scan.sc.nextLine())) {
 			System.exit(0);
+			break;
 		} 
 		}
 	}while(true);

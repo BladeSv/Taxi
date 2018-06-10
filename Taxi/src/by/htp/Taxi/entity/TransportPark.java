@@ -1,11 +1,13 @@
 package by.htp.Taxi.entity;
 
+import java.util.Arrays;
+
 public class TransportPark {
 	private Transport[] Tpark;
 	private Transport[] temp;
 	private String name;
-	private static int index =0;
-
+	//private static int index =0;
+	
 	public String getName() {
 		return name;
 	}
@@ -22,19 +24,24 @@ public class TransportPark {
 		Tpark = tpark;
 	}
 	public void addTranport (Transport transport) {
-		if (index==0) {
+		if (Tpark==null) {
 			Tpark=new Transport[1];
 			Tpark[0]=transport;
-			index++;
+	
 			
 		}
-		Transport[] temp =new Transport[index+1];
-		for(int i=0;i<index;i++) {
+		Transport[] temp =new Transport[Tpark.length+1];
+		for(int i=0;i<(Tpark.length);i++) {
 			temp[i]=Tpark[i];
 			}
-		temp[(index)]=transport;
-		index++;
+		temp[Tpark.length]=transport;
+		
 		Tpark=temp;
+	}
+
+	@Override
+	public String toString() {
+		return "TransportPark [Tpark=" + Arrays.toString(Tpark) + "]";
 	}
 	
 //	{Tpark[0]=new Transport(); 

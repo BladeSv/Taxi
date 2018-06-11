@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class TransportPark {
 	private Transport[] Tpark;
-	private Transport[] temp;
-	private String name;
-	//private static int index =0;
+	
+	private String name="Транспортный парк имени Ильича";
+	
 	
 	public String getName() {
 		return name;
@@ -29,20 +29,20 @@ public class TransportPark {
 			Tpark[0]=transport;
 	
 			
-		}
+		} else {
 		Transport[] temp =new Transport[Tpark.length+1];
 		for(int i=0;i<(Tpark.length);i++) {
 			temp[i]=Tpark[i];
 			}
-		temp[Tpark.length]=transport;
-		
+		temp[Tpark.length]=transport;		
 		Tpark=temp;
+		}
 	}
 
-	@Override
-	public String toString() {
-		return "TransportPark [Tpark=" + Arrays.toString(Tpark) + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "TransportPark [Tpark=" + Arrays.toString(Tpark) + "]";
+//	}
 	
 //	{Tpark[0]=new Transport(); 
 //	Tpark[0].setName("Мазда-929");; 

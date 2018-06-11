@@ -24,5 +24,9 @@ public class Client {
 	public void setMoney(double money) {
 		this.money = money;
 	}
+	@Override
+	public String toString() {
+		return "Клиетн [Имя=" + name + ", Длинна маршрута=" + distance + "км., Количество денег=" + money + ",бел.руб.]";
+	}
 
 }

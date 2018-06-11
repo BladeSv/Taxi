@@ -9,7 +9,10 @@ public class ChooseTransport {
 	private Client client;
 	private Transport[] chooseTpark;
 	private Transport[] temp;
-	private double[] time=new double[1];
+	private double[] time;
+	private double[] price;
+
+	
 	
 	public Transport[] getChooseTpark() {
 		return chooseTpark;
@@ -20,64 +23,83 @@ public class ChooseTransport {
 	public double[] getTime() {
 		return time;
 	}
-	public void setTime(double[] time) {
-		this.time = time;
-	}
+	
 	public double[] getPrice() {
 		return price;
 	}
-	public void setPrice(double[] price) {
-		this.price = price;
-	}
-	private double[] price=new double[1];
+	
+	
 	
 	
 	public void chooseTranport( Client client, Transport[] Tpark){
-		int index=0;
 	
+		double timeT=0, priceT=0;
 		for (int i=0; i<Tpark.length;i++ ) {
-		double km=Tpark[i].getFuel()/Tpark[i].getRate();
-		 time[i]= client.getDistance()/Tpark[i].getSpeed();
-		 price[i]=client.getDistance()/Tpark[i].getPriceKm();
+		double km=Tpark[i].getFuel()/Tpark[i].getRate()*100;
+		timeT= client.getDistance()/Tpark[i].getSpeed();
+		priceT=client.getDistance()/Tpark[i].getPriceKm();
 		if(km>=client.getDistance()){
-			if(client.getMoney()>=price[i]) {
-			addChooseTransport(Tpark[i], index);	
-			addTime(time[i], index);
-			addPrice( price[i], index);
-				index++;
+			if(client.getMoney()>=priceT) {
+			addChooseTransport(Tpark[i]);	
+			addTime(timeT);
+			addPrice( priceT);
+		
 			}
 		}		
 							
 		}	
 		
 		}
-		private void addChooseTransport (Transport transport, int index) {
-			Transport[] temp =new Transport[index+1];
-			for(int i=0;i<index;i++) {
-				temp[i]=chooseTpark[i];
+		private void addChooseTransport (Transport transport) {
+			if (chooseTpark==null) {
+				chooseTpark=new Transport[1];
+				chooseTpark[0]=transport;
+			}else {
+				Transport[] temp =new Transport[chooseTpark.length+1];
+				for(int i=0;i<(chooseTpark.length);i++) {
+					temp[i]=chooseTpark[i];
+					}
+				temp[chooseTpark.length]=transport;		
+				chooseTpark=temp;
 				}
-			temp[(index+1)]=transport;
-		
-			chooseTpark=temp;
-	}
-		private void addTime (double times, int index) {
-			double[]  temp =new double[index+1];
-			for(int i=0;i<index;i++) {
-				temp[i]=time[i];
 				}
-			temp[(index+1)]=times;
+			
+		private void addTime (double timeAdd) {
+			if (time==null) {
+				time=new double[1];
+				time[0]=timeAdd;
+			}else {	
+				double[] temp =new double[time.length+1];
+				for(int i=0;i<(time.length);i++) {
+					temp[i]=time[i];
+					}
+				temp[time.length]=timeAdd;		
+				time=temp;
+				}	
+					
+			}
+					
 		
-			time=temp;
-		}
-		private void addPrice (double prices, int index) {
-			double[]  temp =new double[index+1];
-			for(int i=0;i<index;i++) {
-				temp[i]=time[i];
-				}
-			temp[(index+1)]=prices;
 		
-			time=temp;
-		}
+		private void addPrice (double priceAdd) {
+			if (price==null) {
+				price=new double[1];
+				price[0]=priceAdd;
+			}else {	
+				double[] temp =new double[price.length+1];
+				for(int i=0;i<(price.length);i++) {
+					temp[i]=price[i];
+					}
+				temp[price.length]=priceAdd;		
+				price=temp;
+				}	
+					
+			}
+		
+		
+		
+		
+		
 		@Override
 		public String toString() {
 			return "ChooseTransport [client=" + client + ", chooseTpark=" + Arrays.toString(chooseTpark) + ", temp="

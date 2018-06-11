@@ -5,14 +5,14 @@ import by.htp.Taxi.entity.Transport;
 public class Sort {
 
 	
-public void sortTime(ChooseTransport chooseTransport) {
+public static void sortTime(ChooseTransport chooseTransport) {
 	Transport temp;
 	double tepmT;
 	double tempP;
 	for(int i=0; i<chooseTransport.getChooseTpark().length;i++ ) {
 		for(int j=0; j<chooseTransport.getChooseTpark().length;j++) {
 			
-			if(chooseTransport.getTime()[i]>chooseTransport.getTime()[j]) {
+			if(chooseTransport.getTime()[i]<chooseTransport.getTime()[j]) {
 				temp=chooseTransport.getChooseTpark()[i];
 				tepmT=chooseTransport.getTime()[i];
 				 tempP=chooseTransport.getPrice()[i];
@@ -32,14 +32,14 @@ public void sortTime(ChooseTransport chooseTransport) {
 		
 }
 	
-public void sortPrice(ChooseTransport chooseTransport) {
+public static void sortPrice(ChooseTransport chooseTransport) {
 	Transport temp;
 	double tepmT;
 	double tempP;
 	for(int i=0; i<chooseTransport.getChooseTpark().length;i++ ) {
 		for(int j=0; j<chooseTransport.getChooseTpark().length;j++) {
 			
-			if(chooseTransport.getPrice()[i]>chooseTransport.getPrice()[j]) {
+			if(chooseTransport.getPrice()[i]<chooseTransport.getPrice()[j]) {
 				temp=chooseTransport.getChooseTpark()[i];
 				tepmT=chooseTransport.getTime()[i];
 				 tempP=chooseTransport.getPrice()[i];

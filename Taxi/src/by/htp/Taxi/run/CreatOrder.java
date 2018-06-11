@@ -4,25 +4,19 @@ import by.htp.Taxi.entity.*;
 
 public class CreatOrder {
 	
-private Client client;
-private ChooseTransport chooseTransport;
-private TransportPark transportPark;
+private static	Client client;
 
 
-public Client getClient() {
-	return client;
-}
 
-public void setClient(Client client) {
-	this.client = client;
-}
 	 
-public Order creatOrder (TransportPark transportPark) {
+public static Order creatOrder (TransportPark transportPark) {
 	
 	Order order=new Order();
 	
-	chooseTransport = new ChooseTransport();
-	order.setClient(AddClient.addClient());	
+	ChooseTransport chooseTransport = new ChooseTransport();
+	client=AddClient.addClient();
+	order.setClient(client);	
+	
 	chooseTransport.chooseTranport(client, transportPark.getTpark());
 	order.setChooseTransport(chooseTransport);
 	return order;

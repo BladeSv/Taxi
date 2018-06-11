@@ -9,7 +9,7 @@ public class MainMenu {
 	TransportPark transportPark= new TransportPark();
 
 	BaseOrder baseOrder =new BaseOrder();
-	
+	SQL sql=new SQL();
 
 
 	
@@ -17,7 +17,7 @@ public class MainMenu {
 public void mainMenu() {
 	do {
 		System.out.println();
-		System.out.println(TransportType.values());
+
 	System.out.println("Вас приведствует такси \"Кручу верчу довезти хочу!\"");
 	System.out.println("Выбериту пункт меню:");
 	System.out.println("1. Оформить заказ.");
@@ -28,7 +28,7 @@ public void mainMenu() {
 	System.out.println("6. Добавить рандомный транспорт в автопарк такси.");
 	System.out.println("7. Вывести авто в парке.");
 	System.out.println("8. Вывести все заказы.");
-	System.out.println("9. Загрузка базы данных.");
+	System.out.println("9. Загрузка авто из базы данных в парк.");
 	System.out.println("10. Выход из меню.");
 	
 	switch(Integer.parseInt(Scan.sc.nextLine())) {
@@ -59,7 +59,8 @@ public void mainMenu() {
 		Output.output(baseOrder);
 		break;
 	case 9:
-		new SQL().sql();
+		sql.sqlRead(transportPark);
+		break;
 		
 	case 10:
 		System.out.println("Вы уверены, что хотите выйти из меню? (y)");

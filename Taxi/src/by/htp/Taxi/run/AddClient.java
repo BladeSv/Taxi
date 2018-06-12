@@ -6,20 +6,17 @@ import by.htp.Taxi.entity.Client;
 
 public class AddClient {
 	private static Client client;
-	
 
-	
-	
-public static Client addClient() {
-	client =new Client();
-System.out.println("Введите Ваше имя:");
-client.setName(Scan.sc.nextLine());
-System.out.println("Введите сколько киломметров до пункта назначения:");
-client.setDistance(Double.parseDouble(Scan.sc.nextLine()));
-System.out.println("Веедите сумму которой распологаете, в бел.руб.:");	
-client.setMoney(Double.parseDouble(Scan.sc.nextLine()));;	
-	return client;
-}
-	
-	
+	public static Client addClient() {
+		client = new Client();
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ:");
+		client.setName(Scan.sc.nextLine());
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:");
+		client.setDistance(Double.parseDouble(Scan.sc.nextLine()));
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅ.пїЅпїЅпїЅ.:");
+		client.setMoney(Double.parseDouble(Scan.sc.nextLine()));
+		;
+		return client;
+	}
+
 }

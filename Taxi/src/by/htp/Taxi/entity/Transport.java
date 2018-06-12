@@ -6,14 +6,8 @@ public class Transport extends TransportPark {
 	private int fuel;
 	private double rate;
 	private double priceKm;
-	private TransportType transType;
-	public TransportType getTransType() {
-		return transType;
-	}
 
-	public void setTransType(TransportType transType) {
-		this.transType = transType;
-	}
+	private TransportType transprtType;
 
 	public double getPriceKm() {
 		return priceKm;
@@ -30,8 +24,6 @@ public class Transport extends TransportPark {
 	public void setRate(double rate) {
 		this.rate = rate;
 	}
-
-	private TransportType  transprtType;
 
 	public int getFuel() {
 		return fuel;
@@ -59,7 +51,46 @@ public class Transport extends TransportPark {
 
 	@Override
 	public String toString() {
-		return this.getName()+": Скорость=" + speed + "км.ч, Обеъем топлива=" + fuel + "л, Расход топлива на 100км.=" + String.format("%.3f",rate) + "л, Стоимость 1-го км=" + String.format("%.3f",priceKm) + "бел.руб.";
+		return this.getName() + ": пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ=" + transprtType.getType() + ", пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ=" + speed
+				+ "пїЅпїЅ.пїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ=" + fuel + "пїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 100пїЅпїЅ.=" + String.format("%.2f", rate)
+				+ "пїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1-пїЅпїЅ пїЅпїЅ=" + String.format("%.2f", priceKm) + "пїЅпїЅпїЅ.пїЅпїЅпїЅ.";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + fuel;
+		long temp;
+		temp = Double.doubleToLongBits(priceKm);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(rate);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + speed;
+		result = prime * result + ((transprtType == null) ? 0 : transprtType.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transport other = (Transport) obj;
+		if (fuel != other.fuel)
+			return false;
+		if (Double.doubleToLongBits(priceKm) != Double.doubleToLongBits(other.priceKm))
+			return false;
+		if (Double.doubleToLongBits(rate) != Double.doubleToLongBits(other.rate))
+			return false;
+		if (speed != other.speed)
+			return false;
+		if (transprtType != other.transprtType)
+			return false;
+		return true;
+	}
+
 }

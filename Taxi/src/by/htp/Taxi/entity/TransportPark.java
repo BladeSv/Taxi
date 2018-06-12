@@ -4,10 +4,9 @@ import java.util.Arrays;
 
 public class TransportPark {
 	private Transport[] Tpark;
-	
-	private String name="Транспортный парк имени Ильича";
-	
-	
+
+	private String name = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
+
 	public String getName() {
 		return name;
 	}
@@ -23,34 +22,20 @@ public class TransportPark {
 	public void setTpark(Transport[] tpark) {
 		Tpark = tpark;
 	}
-	public void addTranport (Transport transport) {
-		if (Tpark==null) {
-			Tpark=new Transport[1];
-			Tpark[0]=transport;
-	
-			
+
+	public void addTranport(Transport transport) {
+		if (Tpark == null) {
+			Tpark = new Transport[1];
+			Tpark[0] = transport;
+
 		} else {
-		Transport[] temp =new Transport[Tpark.length+1];
-		for(int i=0;i<(Tpark.length);i++) {
-			temp[i]=Tpark[i];
+			Transport[] temp = new Transport[Tpark.length + 1];
+			for (int i = 0; i < (Tpark.length); i++) {
+				temp[i] = Tpark[i];
 			}
-		temp[Tpark.length]=transport;		
-		Tpark=temp;
+			temp[Tpark.length] = transport;
+			Tpark = temp;
 		}
 	}
 
-//	@Override
-//	public String toString() {
-//		return "TransportPark [Tpark=" + Arrays.toString(Tpark) + "]";
-//	}
-	
-//	{Tpark[0]=new Transport(); 
-//	Tpark[0].setName("Мазда-929");; 
-//	
-//	
-//	}
-	
-	
-	
-	
 }

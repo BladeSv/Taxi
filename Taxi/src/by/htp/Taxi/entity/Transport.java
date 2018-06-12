@@ -51,9 +51,9 @@ public class Transport extends TransportPark {
 
 	@Override
 	public String toString() {
-		return this.getName() + ": ��� ����������=" + transprtType.getType() + ", ��������=" + speed
-				+ "��.�, ������ �������=" + fuel + "�, ������ ������� �� 100��.=" + String.format("%.2f", rate)
-				+ "�, ��������� 1-�� ��=" + String.format("%.2f", priceKm) + "���.���.";
+		return this.getName() + ": Тип транспорта=" + transprtType.getType() + ", Скорость=" + speed
+				+ "км.ч, Запас топлива=" + fuel + "л, Расход топлива на 100км.=" + String.format("%.2f", rate)
+				+ "л, Стоимость 1-го км�=" + String.format("%.2f", priceKm) + "бел.руб.";
 	}
 
 	@Override

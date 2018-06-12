@@ -1,7 +1,7 @@
 package by.htp.Taxi.entity;
 
 public enum TransportType {
-	AutoTransport("�������������"), RwTransport("���������������"), AirTransport("���������"), SeaTransport("�������");
+	AutoTransport("Автомобильный"), RwTransport("Железнодорожный"), AirTransport("Воздушный"), SeaTransport("Морской");
 
 	private String type;
 

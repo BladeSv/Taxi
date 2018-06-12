@@ -11,7 +11,7 @@ public class CreatTransport {
 		transport.setName("Transport" + ((int) (Math.random() * 100)));
 		switch (((int) (Math.random() * 3 + 1))) {
 		case 1:
-			transport.setTransprtType(TransportType.AirTransport);
+			transport.setTransprtType(TransportType.AutoTransport);
 			break;
 		case 2:
 			transport.setTransprtType(TransportType.RwTransport);
@@ -33,23 +33,23 @@ public class CreatTransport {
 
 		transport.setPriceKm((Math.random() * 3));
 
-		System.out.println("���� ������");
+		System.out.println("Транспорт создан");
 		return transport;
 
 	}
 
 	public static Transport creatTranport() {
 		Transport transport = new Transport();
-		System.out.println("������� �������� ����������:");
+		System.out.println("Введите назвение транспорта:");
 		transport.setName(Scan.sc.nextLine());
-		System.out.println("�������� ��� ����������");
-		System.out.println("1. �������������");
-		System.out.println("2. ���������������");
-		System.out.println("3. ���������");
-		System.out.println("4. ������");
+		System.out.println("Выберите тип транспорта");
+		System.out.println("1. Автомобильный");
+		System.out.println("2. Железнодорожный");
+		System.out.println("3. Воздушиный");
+		System.out.println("4. Морской");
 		switch (Integer.parseInt(Scan.sc.nextLine())) {
 		case 1:
-			transport.setTransprtType(TransportType.AirTransport);
+			transport.setTransprtType(TransportType.AutoTransport);
 			break;
 		case 2:
 			transport.setTransprtType(TransportType.RwTransport);
@@ -61,13 +61,13 @@ public class CreatTransport {
 			transport.setTransprtType(TransportType.SeaTransport);
 			break;
 		}
-		System.out.println("������� ������������ �������� ����������, � ��/�:");
+		System.out.println("Введите максимальную скорость транспорта, в км/ч:");
 		transport.setSpeed((Integer.parseInt(Scan.sc.nextLine())));
-		System.out.println("������� ����� ������� � ����������, � �:");
+		System.out.println("Введите объем топлива в баке транспорта, в л:");
 		transport.setFuel(Integer.parseInt(Scan.sc.nextLine()));
-		System.out.println("������� ������ ������� � ���������� �� 100��, � �:");
+		System.out.println("Введите расход топлива транспорта на 100км, в л:");
 		transport.setRate(Double.parseDouble(Scan.sc.nextLine()));
-		System.out.println("������� ��������� 1 ��, � ���. ���:");
+		System.out.println("Введите стоимость 1 км, в бел. руб");
 		transport.setPriceKm((Double.parseDouble(Scan.sc.nextLine())));
 		return transport;
 

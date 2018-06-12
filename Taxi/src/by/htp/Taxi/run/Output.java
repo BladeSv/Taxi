@@ -17,31 +17,31 @@ public class Output {
 	}
 
 	public static void output(ChooseTransport transport) {
-		System.out.println("Подходящие транспортные средства");
+		System.out.println("РўСЂР°РЅСЃРїРѕС‚ РїРѕРґС…РѕРґСЏС‰РёР№ Р’Р°Рј С‚СЂР°РЅСЃРїРѕСЂС‚");
 		for (int i = 0; i < transport.getChooseTpark().length; i++) {
-			System.out.println(transport.getChooseTpark()[i] + "Время поездки="
-					+ String.format("%.2f", (transport.getTime()[i] * 60)) + "мин., Стоимость поезки:"
-					+ String.format("%.2f", transport.getPrice()[i]) + "бел.руб");
+			System.out.println(transport.getChooseTpark()[i] + "Р’СЂРµРјРµ РІ РїСѓС‚Рё="
+					+ String.format("%.2f", (transport.getTime()[i] * 60)) + "РјРёРЅ., РЎС‚РѕРёРјРѕС‚СЊ РїРѕРµР·РґРєРё:"
+					+ String.format("%.2f", transport.getPrice()[i]) + "Р±РµР».СЂСѓР±");
 		}
 
 	}
 
 	public static void output(BaseOrder transport) {
 
-		System.out.println("База Заказов");
+		System.out.println("Р‘Р°Р·Р° Р—Р°РєР°Р·РѕРІ");
 		for (int i = 0; i < transport.getBaseOrede().length; i++) {
-			System.out.println("Клиент:");
+			System.out.println("Р—Р°РєР°Р·С‡РёРє:");
 			System.out.println(transport.getBaseOrede()[i].getClient());
-			System.out.println("Подходящие транспортные средства");
+			System.out.println("РўСЂР°РЅСЃРїРѕС‚ РїРѕРґС…РѕРґСЏС‰РёР№ Р’Р°Рј С‚СЂР°РЅСЃРїРѕСЂС‚");
 			for (int j = 0; j < transport.getBaseOrede()[i].getChooseTransport().getChooseTpark().length; j++)
 
 				System.out
-						.println(transport.getBaseOrede()[i].getChooseTransport().getChooseTpark()[j] + "Время поездки="
+						.println(transport.getBaseOrede()[i].getChooseTransport().getChooseTpark()[j] + "Р’СЂРµРјРµ РІ РїСѓС‚Рё="
 								+ String.format("%.2f",
 										(transport.getBaseOrede()[i].getChooseTransport().getTime()[j] * 60))
-								+ "мин., Стоимость поезки:"
+								+ "РјРёРЅ., РЎС‚РѕРёРјРѕС‚СЊ РїРѕРµР·РґРєРё:"
 								+ String.format("%.2f", transport.getBaseOrede()[i].getChooseTransport().getPrice()[j])
-								+ "бел.руб");
+								+ "Р±РµР».СЂСѓР±");
 			System.out.println();
 		}
 

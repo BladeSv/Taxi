@@ -9,11 +9,11 @@ public class AddClient {
 
 	public static Client addClient() {
 		client = new Client();
-		System.out.println("������� ���� ���:");
+		System.out.println("Введите ваше имя:");
 		client.setName(Scan.sc.nextLine());
-		System.out.println("������� ������� ����������� �� ������ ����������:");
+		System.out.println("Введите растояние до вашего пункта назначения, в км:");
 		client.setDistance(Double.parseDouble(Scan.sc.nextLine()));
-		System.out.println("������� ����� ������� ������������, � ���.���.:");
+		System.out.println("Введи сумму денег которой распологаете, в бел.руб.:");
 		client.setMoney(Double.parseDouble(Scan.sc.nextLine()));
 		;
 		return client;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class TransportPark {
 	private Transport[] Tpark;
 
-	private String name = "������������ ���� ����� ������";
+	private String name = "Транспортный парк имени Ильича";
 
 	public String getName() {
 		return name;

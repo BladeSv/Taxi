@@ -32,8 +32,8 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "������ [���=" + name + ", ������ ��������=" + distance + "��., ���������� �����=" + money
-				+ ",���.���.]";
+		return "Клиент: [Имя=" + name + ", Растояние до пункта назначения=" + distance + "км., Доступная сумма денег=" + money
+				+ ",бел.руб.]";
 	}
 
 }
